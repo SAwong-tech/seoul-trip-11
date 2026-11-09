@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>首爾 5 日 4 夜 · 11.10–14 2026｜行程 + 揀食器</title>
+<meta name="theme-color" content="#0e1014">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="首爾行程">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" href="icon.png">
+
+<style>
+:root{
+  --bg:#0e1014; --card:#15181e; --card2:#16191f; --line:#222733;
+  --txt:#e8ecf2; --dim:#8b95a5; --dim2:#6c7686;
+  --pink:#ff5a7a; --mint:#7cf3d0; --violet:#a78bfa; --amber:#ffb347; --gold:#ffd166; --blue:#6ea8fe;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:106px}
+body{
+  background:radial-gradient(1100px 460px at 82% -8%,rgba(255,90,122,.10),transparent 60%),
+             radial-gradient(860px 400px at 0 4%,rgba(124,243,208,.07),transparent 55%),var(--bg);
+  color:var(--txt);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","PingFang HK","Noto Sans TC","Noto Sans KR",sans-serif;
+  padding:0 0 calc(40px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:840px;margin:0 auto;padding:0 16px}
+.topbar{position:sticky;top:0;z-index:60;padding-top:env(safe-area-inset-top);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(14,16,20,.8);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:840px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:10px}
+.nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font:700 11.5px/1 inherit;text-decoration:none;color:var(--dim);padding:7px 9px;border-radius:999px;
+  border:1px solid var(--line);white-space:nowrap;transition:.18s}
+.nav a:hover{color:var(--txt);border-color:#333c4c}
+.nav a.on{color:#0e1014;background:var(--mint);border-color:var(--mint)}
+.nav a.hot{color:#0e1014;background:var(--gold);border-color:var(--gold)}
+.printbtn{border:1px solid var(--line);background:transparent;color:var(--dim);font:700 11.5px/1 inherit;
+  padding:8px 10px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.printbtn:hover{color:var(--txt);border-color:#3a4457}
+
+header.hero{padding:30px 0 18px}
+.kicker{font-size:10.5px;letter-spacing:.28em;font-weight:800;color:var(--mint);text-transform:uppercase}
+h1{font-size:clamp(26px,7.2vw,42px);line-height:1.12;font-weight:800;letter-spacing:-.02em;margin:9px 0 8px}
+h1 em{font-style:normal;color:var(--pink)}
+.lede{color:var(--dim);font-size:14px;max-width:62ch;overflow-wrap:break-word}
+.lede b{color:var(--txt)}
+.chips{display:grid;grid-template-columns:1fr;gap:8px;margin:18px 0 0}
+@media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
+.chip{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5}
+.chip .lbl{font-size:10px;letter-spacing:.16em;font-weight:800;color:var(--dim2);margin-bottom:5px}
+.chip b{color:#fff}.chip .hl{color:var(--pink);font-weight:800}.chip .sm{color:var(--dim2);font-size:12px}
+
+.wx-wrap{margin:14px 0 22px}
+.wx-label{font-size:10px;letter-spacing:.2em;font-weight:800;color:var(--dim2);margin:0 0 8px 2px}
+.wx{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.wx .d{background:linear-gradient(180deg,#141d1d,#121719);border:1px solid #1f3030;border-radius:12px;padding:9px 6px;text-align:center}
+.wx .dd{font-size:9.5px;font-weight:800;color:var(--mint)}
+.wx .ic{font-size:15px;line-height:1.3;margin:3px 0 2px}
+.wx .tt{font-size:14.5px;font-weight:800;white-space:nowrap;letter-spacing:-.03em}
+.wx .tt i{font-style:normal;color:var(--dim);font-size:11px;font-weight:700}
+.wx .mm{font-size:9px;color:var(--dim2);margin-top:2px}
+
+.day{--a:var(--pink);background:linear-gradient(180deg,#161a21,#14171d);border:1px solid var(--line);
+  border-radius:var(--r);margin:0 0 14px;overflow:hidden;position:relative}
+.day::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--a)}
+.day-head{padding:14px 16px 10px 18px;border-bottom:1px solid rgba(255,255,255,.045);display:flex;gap:10px;align-items:flex-start}
+.badge{font-size:10px;font-weight:900;letter-spacing:.13em;color:#0e1014;background:var(--a);
+  padding:4px 8px;border-radius:6px;white-space:nowrap;margin-top:2px}
+.day-head h2{font-size:clamp(15px,4.1vw,18.5px);font-weight:800;line-height:1.32;letter-spacing:-.01em}
+.day-head .theme{font-size:12px;color:var(--dim2);margin-top:3px}
+
+.tl{list-style:none;padding:9px 16px 12px 18px}
+.tl li{display:flex;gap:11px;padding:6px 0;position:relative}
+.tl li::before{content:"";position:absolute;left:40px;top:0;bottom:0;width:1px;background:#232a36}
+.tl li:first-child::before{top:13px}
+.tl li:last-child::before{bottom:calc(100% - 15px)}
+.tl time{flex:0 0 50px;font-size:12px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums;padding-top:2px;z-index:1}
+.tl .body{flex:1;min-width:0}
+.tl .body b{display:block;font-size:14.5px;font-weight:800;color:#fff;line-height:1.4}
+.tl .body span{display:block;font-size:12.5px;color:var(--dim);line-height:1.55;overflow-wrap:break-word}
+.tl .body .warn{color:var(--amber);font-weight:800}
+.tl .body .free{color:var(--mint);font-weight:800}
+.tl .body .tag{display:inline-block;font-size:10px;font-weight:800;color:#b6c0cf;background:#242a36;
+  padding:1px 6px;border-radius:4px;margin:3px 4px 0 0}
+.pick{margin-top:6px;display:inline-flex;align-items:center;gap:5px;background:rgba(255,209,102,.12);
+  border:1px solid rgba(255,209,102,.4);color:var(--gold);font:800 12px/1 inherit;padding:7px 11px;border-radius:999px;cursor:pointer}
+.pick:active{transform:scale(.97)}
+.violet{--a:var(--violet)}.amber{--a:var(--amber)}.gold{--a:var(--gold)}.blue{--a:var(--blue)}
+
+/* pocket list */
+.sheet-sec{margin:26px 0 0}
+.sect-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.sect-head h3{font-size:17px;font-weight:800}
+.sect-head p{font-size:12px;color:var(--dim2)}
+.tabs{display:flex;gap:8px;margin-bottom:10px}
+.tab{flex:1;text-align:center;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--card2);
+  color:var(--dim);font:800 13px/1 inherit;cursor:pointer}
+.tab.on{background:var(--mint);color:#0e1014;border-color:var(--mint)}
+.filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-bottom:8px}
+.filters::-webkit-scrollbar{display:none}
+.fbtn{white-space:nowrap;border:1px solid var(--line);background:var(--card2);color:var(--dim);
+  font:700 12px/1 inherit;padding:8px 12px;border-radius:999px;cursor:pointer}
+.fbtn.on{background:var(--gold);color:#0e1014;border-color:var(--gold)}
+.searchrow{display:flex;gap:8px;margin-bottom:10px}
+.searchrow input{flex:1;min-width:0;background:var(--card2);border:1px solid var(--line);border-radius:12px;
+  color:var(--txt);font:400 14px/1 inherit;padding:11px 13px;outline:none}
+.searchrow input:focus{border-color:#3a4457}
+.dice{border:1px solid rgba(255,209,102,.45);background:rgba(255,209,102,.12);color:var(--gold);
+  font:800 13px/1 inherit;padding:11px 14px;border-radius:12px;cursor:pointer;white-space:nowrap}
+.dice:active{transform:scale(.97)}
+
+.cards{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;position:relative}
+.card.picked{border-color:var(--gold);box-shadow:0 0 0 2px rgba(255,209,102,.22)}
+.card .nm{font-size:14.5px;font-weight:800;color:#fff;line-height:1.35;padding-right:52px}
+.card .cat{position:absolute;right:12px;top:12px;font-size:9.5px;font-weight:800;letter-spacing:.06em;
+  color:#0e1014;background:var(--mint);padding:3px 7px;border-radius:5px}
+.card .cat.b{background:var(--violet)}
+.card .ad{font-size:11.5px;color:var(--dim2);margin-top:5px;line-height:1.5;overflow-wrap:break-word}
+.card .no{font-size:12px;color:var(--dim);margin-top:4px;line-height:1.5}
+.card .links{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.card .links a{font-size:11px;font-weight:800;text-decoration:none;color:var(--mint);
+  border:1px solid rgba(124,243,208,.3);padding:5px 9px;border-radius:7px;background:rgba(124,243,208,.06)}
+.card .links a.g{color:var(--blue);border-color:rgba(110,168,254,.3);background:rgba(110,168,254,.07)}
+.empty{color:var(--dim2);font-size:13px;padding:18px 4px}
+
+.panel{background:var(--card2);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-top:12px}
+.panel h3{font-size:12px;letter-spacing:.12em;font-weight:800;margin-bottom:10px;color:var(--pink)}
+.panel.mint h3{color:var(--mint)}
+.ck-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.ck-head h3{margin:0}
+.count{font-size:11px;font-weight:800;color:var(--mint);background:rgba(124,243,208,.1);
+  border:1px solid rgba(124,243,208,.25);padding:3px 9px;border-radius:999px}
+.reset{border:0;background:none;color:var(--dim2);font:800 11px/1 inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;border-bottom:1px dashed rgba(255,255,255,.05)}
+.chk:last-child{border-bottom:0}
+.chk input{appearance:none;-webkit-appearance:none;flex:0 0 18px;width:18px;height:18px;margin-top:1px;
+  border:1.5px solid #3a4457;border-radius:5px;background:transparent;cursor:pointer;position:relative;transition:.15s}
+.chk input:checked{background:var(--mint);border-color:var(--mint)}
+.chk input:checked::after{content:"";position:absolute;left:5px;top:1.5px;width:5px;height:10px;
+  border:solid #0e1014;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.chk span{font-size:13px;color:#cfd6e0;line-height:1.5}
+.chk input:checked ~ span{color:var(--dim2);text-decoration:line-through}
+.chk span b{color:var(--gold);font-weight:800}
+ul.tips{list-style:none}
+ul.tips li{font-size:13px;color:#cfd6e0;padding:5px 0 5px 16px;position:relative;line-height:1.55}
+ul.tips li::before{content:"▸";position:absolute;left:0;top:5px;color:var(--mint);font-size:10px}
+ul.tips li b{color:#fff}
+
+details.refs{margin:22px 0 0;background:var(--card2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+details.refs summary{font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--dim);cursor:pointer;list-style:none}
+details.refs summary::-webkit-details-marker{display:none}
+details.refs summary::after{content:" ＋";color:var(--mint)}
+details.refs[open] summary::after{content:" −"}
+details.refs ol{list-style:none;margin-top:12px;columns:1;column-gap:24px}
+@media(min-width:700px){details.refs ol{columns:2}}
+details.refs li{font-size:11px;color:var(--dim2);line-height:1.65;margin-bottom:7px;break-inside:avoid}
+footer{margin-top:24px;text-align:center;font-size:11px;color:#4e5765;line-height:1.8}
+footer b{color:var(--dim2)}
+::selection{background:rgba(255,90,122,.32)}
+@media print{
+  body{background:#fff;color:#111}
+  .topbar,.printbtn,.reset,.pick,.filters,.searchrow,.tabs{display:none!important}
+  .day,.panel,.card,details.refs,.chip{background:#fff;border-color:#ccc;break-inside:avoid}
+  h1,h2,.card .nm,.tl .body b{color:#000}
+  .tl time,.card .ad,.card .no,.lede{color:#444}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <nav class="nav" id="nav">
+      <a href="#d1">D1</a><a href="#d2">D2</a><a href="#d3">D3</a><a href="#d4">D4</a><a href="#d5">D5</a>
+      <a href="#pocket" class="hot">🍽 食乜</a><a href="#prep">準備</a><a href="#refs">來源</a>
+    </nav>
+    <button class="printbtn" onclick="window.print()">存 PDF</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Seoul · 5 days 4 nights · v3</div>
+  <h1>首爾 <em>景點 × 夜蒲 × 即場揀食</em></h1>
+  <p class="lede">2026 年 11 月 10（二）– 14（六）｜2 人｜<b>UH FLAT Signature Gangnam</b>｜行程定骨架，食乜即場喺下面揀</p>
+  <div class="chips">
+    <div class="chip"><div class="lbl">去程 UO630</div>11/10（二）<b class="hl">10:30</b> HKG T2 → <b class="hl">14:55</b> ICN T1<br><span class="sm">落地後預 45–60 分過關＋行李</span></div>
+    <div class="chip"><div class="lbl">回程 UO627</div>11/14（六）<b class="hl">21:50</b> ICN T1 → <b class="hl">00:55+1</b> HKG T1<br><span class="sm">19:50 前到 T1，17:15 出門口</span></div>
+    <div class="chip"><div class="lbl">住宿</div><b>UH FLAT Signature Gangnam</b><br>11, Teheran-ro 10-gil<br><span class="sm">驛三站 420m／江南站 450m</span></div>
+  </div>
+</header>
+
+<section class="wx-wrap">
+  <p class="wx-label">首爾天氣預報 · 2026-11-04 抓取</p>
+  <div class="wx">
+    <div class="d"><div class="dd">11/10 二</div><div class="ic">☀️</div><div class="tt">11<i>°</i>/ -0.5<i>°</i></div><div class="mm">雨 0%<br>日落 17:25</div></div>
+    <div class="d"><div class="dd">11/11 三</div><div class="ic">⛅</div><div class="tt">14.5<i>°</i>/ 3.8<i>°</i></div><div class="mm">雨 2%<br>日落 17:24</div></div>
+    <div class="d"><div class="dd">11/12 四</div><div class="ic">🌫️</div><div class="tt">13.7<i>°</i>/ 2.8<i>°</i></div><div class="mm">雨 0%<br>日落 17:23</div></div>
+    <div class="d"><div class="dd">11/13 五</div><div class="ic">🌫️</div><div class="tt">14.9<i>°</i>/ 3.6<i>°</i></div><div class="mm">雨 1%<br>日落 17:22</div></div>
+    <div class="d"><div class="dd">11/14 六</div><div class="ic">⛅</div><div class="tt">18.1<i>°</i>/ 7.5<i>°</i></div><div class="mm">雨 7%<br>日落 17:22</div></div>
+  </div>
+</section>
+
+
+<section class="panel" style="margin:0 0 16px">
+  <h3>🛬 ICN T1 落地 4 步（14:55 落機）</h3>
+  <ul class="tips">
+    <li><b>① 先換₩現金</b> — T1 的 WOWPASS 機只收韓圜現鈔（5萬／1萬／5千），唔收港幣、唔做外幣兌換。入境大堂找換店或 ATM 先換約 ₩300,000。</li>
+    <li><b>② CU 1 號店發卡</b> — 1 樓入境大堂 <b>2 號出口（A 側）</b>，CU 便利店門口部 WOWPASS 機，<b>06:00–23:59</b>；要<b>護照正本</b>，一證一卡。</li>
+    <li><b>③ 開卡費</b> ₩6,000（網上預購 voucher ₩5,500）｜<b>機器只做到</b>：發卡、補發、充值（無兌換、無提款）。</li>
+    <li><b>④ 兩個錢包要分開充</b> — <b>WOWPASS 餘額</b>（插卡付款，餐廳／店舖）＋ <b>T-money 餘額</b>（拍卡，地鐵巴士便利店）。App 登記要護照，之後可信用卡加值。</li>
+  </ul>
+</section>
+
+<!-- D1 -->
+<section class="day" id="d1" style="--a:var(--pink)">
+  <div class="day-head"><span class="badge">DAY 1</span><div><h2>11/10 二 · 落地 → 江南：買 CON + 酒神堂</h2><div class="theme">唔使趕，但一定要買到 contact lens</div></div></div>
+  <ol class="tl">
+    <li><time>14:55</time><div class="body"><b>ICN T1 抵達</b><span>過關＋行李 45–60 分｜今日朝早 -0.5°C，外套要身上</span></div></li>
+    <li><time>16:00</time><div class="body"><b>入境大堂：換₩現金 → CU 1 號店買 WOWPASS</b><span><span class="warn">2 號出口 A 側</span>｜機 06:00–23:59｜發卡費 ₩6,000（預購 ₩5,500）｜<span class="warn">只收韓圜現鈔</span>，先換 ₩300,000｜要護照正本，一證一卡｜<span class="free">預留 20–25 分</span></span></div></li>
+    <li><time>16:25</time><div class="body"><b>開 WOWPASS App 登記卡 → 充兩個餘額</b><span>WOWPASS 餘額（插卡付款）＋ T-money 餘額（拍卡搭車）分開充；T-money 可喺便利店用現金充，或 App 用信用卡</span></div></li>
+    <li><time>16:45</time><div class="body"><b>機場巴士 6009 去江南</b><span><span class="tag">T1 1F 4A／4B</span>₩17,000、約 61 分到江南站｜用 WOWPASS 的 T-money 拍卡</span></div></li>
+    <li><time>17:20</time><div class="body"><b>Check-in UH FLAT</b><span>獨立套房＋洗衣機，先放行李</span></div></li>
+    <li><time>17:50</time><div class="body"><b>🕶 買 CON：렌즈미 강남CGV점 LensMe</b><span><span class="warn">江南站 1 分鐘</span>｜강남대로 438 스타플렉스 2F 211호｜<span class="free">開到 22:30</span>｜帶舊 lens 盒影相（PWR / BC / DIA），度數齊存貨；同日可再返酒店試戴</span><button class="pick" data-area="gangnam">附近食乜 →</button></div></li>
+    <li><time>19:30</time><div class="body"><b>晚餐＋酒：酒神堂 江南店 주신당</b><span>강남대로96길 9 B1｜11:00–02:00（15:00–17:00 休息）｜江南站 200m</span></div></li>
+    <li><time>22:00</time><div class="body"><b>想食多餐／宵夜</b><span>落樓下便利店或開「食乜」抽一間 — 江南選擇多，唔使計劃死</span><button class="pick" data-area="gangnam">江南食乜 →</button></div></li>
+  </ol>
+</section>
+
+<!-- D2 -->
+<section class="day gold" id="d2">
+  <div class="day-head"><span class="badge">DAY 2</span><div><h2>11/11 三 · 景福宮韓服 → 北村 → 明洞 → N 塔</h2><div class="theme">09:30 起身（唯一要早嘅一日）</div></div></div>
+  <ol class="tl">
+    <li><time>09:30</time><div class="body"><b>起身 / 10:10 出發</b><span>江南 → 景福宮站，3 號線約 25 分</span></div></li>
+    <li><time>10:40</time><div class="body"><b>韓服男 景福宮店（Klook 7955・揀 4 小時）</b><span><span class="tag">社稷路 133-5</span>景福宮站 3 號出口 1 分｜全年無休｜<span class="warn">最後入場 17:00／最後歸還 18:30</span>｜免費內襯裙・置物櫃・基本髮型｜1,000+ 件（B1–2F）｜<span class="free">選衫＋髮型時間唔計入租借</span>｜尖峰 09:00–12:00，10:40 到預 15–25 分排隊</span></div></li>
+    <li><time>11:20</time><div class="body"><b>景福宮</b><span>11 月 09:00–17:00、<span class="warn">16:00 停止入場</span>｜<span class="free">星期三文化日＋著韓服＝免費</span></span><button class="pick" data-area="anguk">安國／北村食乜 →</button></div></li>
+    <li><time>13:35</time><div class="body"><b>午餐：自己揀</b><span>무구옥 蔘雞湯（要排）／닭궁뎅이 炸雞／益善洞韓屋 cafe — 用下面揀食器</span></div></li>
+    <li><time>14:40</time><div class="body"><b>北村韓屋村</b><span>步行 12 分｜<span class="warn">紅區只開 10:00–17:00</span>，違者罰 ₩100,000</span></div></li>
+    <li><time>15:15</time><div class="body"><b>還韓服（4 小時由 11:15 起計）</b><span><span class="warn">準時 15:15 還</span>，遲 10 分鐘 ₩1,000–2,000／人；想再行多陣就 Klook 揀 5 小時方案</span></div></li>
+    <li><time>15:35</time><div class="body"><b>益善洞 韓屋 cafe</b><span>暖身休息；17:00 前轉明洞</span></div></li>
+    <li><time>17:00</time><div class="body"><b>明洞：掃貨＋街頭小食</b><span>店開到 22:00；的士由益善洞 10 分</span><button class="pick" data-area="myeongdong">明洞食乜 →</button></div></li>
+    <li><time>20:00</time><div class="body"><b>南山纜車 → N 首爾塔夜景</b><span>明洞站 4 號出口 571m｜纜車 10:00–23:00、來回 ₩15,000</span></div></li>
+    <li><time>22:00</time><div class="body"><b>鐘路3街 布帳馬車</b><span><span class="warn">只收現金</span>｜人均 ₩25,000–45,000｜開到 02:00–04:00</span></div></li>
+  </ol>
+</section>
+
+<!-- D3 -->
+<section class="day violet" id="d3">
+  <div class="day-head"><span class="badge">DAY 3</span><div><h2>11/12 四 · 弘大 BL 漫畫＋cafe＋掃貨＋夜蒲</h2><div class="theme">10:00 起身</div></div></div>
+  <ol class="tl">
+    <li><time>10:00</time><div class="body"><b>起身 / 11:00 出發</b><span>江南 → 弘大入口 2 號線約 25 分</span></div></li>
+    <li><time>11:20</time><div class="body"><b>BL 週邊掃貨：AK& 5F（Animate ＋ MOFUN AK 同層）</b><span><span class="warn">MOFUN 서교店預約已滿</span>，改行 양화로 188 AK& 5F｜Animate 11:00–21:40｜<span class="free">Lezhin／Bomtoon／RIDI／Mr.BLUE 過往快閃貨</span>｜一次過掃兩間</span></div></li>
+    <li><time>12:40</time><div class="body"><b>카페 투니크 弘大 1 店（Toonique）</b><span>마포구 양화로23길 4-12｜11:00–21:00｜<span class="free">1 店 BL 聯名最多</span>，有過往 BL 週邊</span></div></li>
+    <li><time>13:00</time><div class="body"><b>午餐：自己揀</b><span>Uhwa 韓牛／참새방앗간 煎餅／Oats 咖啡 — 弘大選擇最多</span><button class="pick" data-area="hongdae">弘大食乜 →</button></div></li>
+    <li><time>14:30</time><div class="body"><b>Cartoon Plus 弘大 만화카페</b><span>양화로16길 29 B1｜24 小時｜₩3,600/hr</span></div></li>
+    <li><time>16:30</time><div class="body"><b>掃貨：弘益藥局 → peachclover → MUSINSA</b><span>8 號出口 1 分（藥局開到 23:30）；隱眼 peachclover 9 號出口 5 分</span></div></li>
+    <li><time>17:45</time><div class="body"><b>굿즈모먼트 Goods moment（연남동）</b><span>성미산로 151-1 4F｜11:30–20:00｜韓漫＋BL 週邊百貨；弘大行 15 分</span></div></li>
+    <li><time>19:30</time><div class="body"><b>晚餐：自己揀</b><span>烤肉／炸雞／煎餅 — 飲完先落 club</span><button class="pick" data-area="hongdae">弘大食乜 →</button></div></li>
+    <li><time>22:00</time><div class="body"><b>弘大／合井 酒吧＋노래방</b><span>星期四未算最旺，飲到 01:00 再決定</span></div></li>
+  </ol>
+</section>
+
+<!-- D4 -->
+<section class="day amber" id="d4">
+  <div class="day-head"><span class="badge">DAY 4</span><div><h2>11/13 五 · 聖水 → 東大門 → 廣藏 → 酒神堂總店 → Club</h2><div class="theme">10:30 起身，今晚通頂</div></div></div>
+  <ol class="tl">
+    <li><time>10:30</time><div class="body"><b>起身 / 11:20 出發</b><span>江南 → 聖水 2 號線約 20 分</span></div></li>
+    <li><time>11:40</time><div class="body"><b>Cafe Onion 聖水</b><span>성수역 2 號出口 132m｜08:00–22:00（L.O. 21:30）</span></div></li>
+    <li><time>12:40</time><div class="body"><b>聖水掃街：LAKA / margesherwood / 甜食 6 間</b><span>見下面「買乜」同「食乜」聖水 tab</span><button class="pick" data-area="seongsu">聖水食乜 →</button></div></li>
+    <li><time>15:30</time><div class="body"><b>東大門</b><span>Doota 10:30–24:00｜Migliore 到 02:00（週一休）｜DDP 夜景＋清溪川</span></div></li>
+    <li><time>19:30</time><div class="body"><b>晚餐：自己揀</b><span>신당한우곱창 烤腸（16:00 開、逢週日休）／廣藏市場小食</span><button class="pick" data-area="sindang">新堂／東大門食乜 →</button></div></li>
+    <li><time>21:30</time><div class="body"><b>酒神堂 新堂本店</b><span>퇴계로 411｜18:00–01:00｜신당역 12 號出口</span></div></li>
+    <li><time>23:30</time><div class="body"><b>Club</b><span>弘大 vurt.（到 06:00–08:00）／Modeci；或江南 Lion Super Club、Lowkey</span></div></li>
+  </ol>
+</section>
+
+<!-- D5 -->
+<section class="day blue" id="d5">
+  <div class="day-head"><span class="badge">DAY 5</span><div><h2>11/14 六 · 最後掃貨 → 返港</h2><div class="theme">10:30 起身，唔可以遲到</div></div></div>
+  <ol class="tl">
+    <li><time>10:30</time><div class="body"><b>起身執行李</b><span>前一晚洗完衫，今日直接入箱</span></div></li>
+    <li><time>11:30</time><div class="body"><b>Check-out＋寄存行李</b><span>問 late checkout；唔得就寄存</span></div></li>
+    <li><time>12:00</time><div class="body"><b>午餐＋最後掃貨</b><span>江南 COEX 星空圖書館／新世界，或補明洞</span><button class="pick" data-area="gangnam">江南食乜 →</button></div></li>
+    <li><time>16:45</time><div class="body"><b>返酒店取行李</b></div></li>
+    <li><time>17:15</time><div class="body"><b>出發去 ICN</b><span><span class="tag">6020 巴士 驛三站</span>₩17,000｜趕就的士約 ₩70,000／70 分</span></div></li>
+    <li><time>21:50</time><div class="body"><b>UO627 起飛</b><span>00:55（+1）到香港</span></div></li>
+  </ol>
+</section>
+
+<!-- POCKET LIST -->
+<section class="sheet-sec" id="pocket">
+  <div class="sect-head"><div><h3>口袋清單 · 即場揀</h3><p id="hint">揀區 → 揀類型 → 「🎲」唔想諗就抽一間</p></div></div>
+  <div class="tabs">
+    <button class="tab on" data-tab="food" id="tabFood">🍽 食乜好</button>
+    <button class="tab" data-tab="shop" id="tabShop">🛍 買乜好</button>
+    <button class="tab" data-tab="prod" id="tabProd">🧴 產品</button>
+  </div>
+  <div class="filters" id="areas"></div>
+  <div class="searchrow">
+    <input id="q" placeholder="搜尋店名 / 食物（例：醬蟹、곱창、cafe）">
+    <button class="dice" id="dice">🎲 抽</button>
+  </div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<!-- PREP -->
+<section id="prep" style="margin-top:26px">
+  <div class="panel">
+    <div class="ck-head"><h3>要訂／要買</h3><span class="count" id="cntB">0 / 7</span></div>
+    <label class="chk"><input type="checkbox" data-k="b1"><span><b>렌즈미 江南CGV（CON）</b>— D1 17:50 即場，帶舊鏡盒睇 PWR/BC/DIA；開到 22:30</span></label>
+    <label class="chk"><input type="checkbox" data-k="b2"><span><b>BL 週邊路線</b>（D3）— MOFUN 서교已滿 → AK& 5F（Animate／MOFUN AK）＋Toonique 1 店＋Goods moment（LEBOM 冇位已取消）</span></label>
+    <label class="chk"><input type="checkbox" data-k="b3"><span><b>韓服男 Klook 7955（4 小時）</b>— 憑證未兌換可退、可改日期（拍攝方案除外）</span></label>
+    <label class="chk"><input type="checkbox" data-k="b4"><span><b>N 首爾塔＋纜車套票</b>（D2 20:00）— 網上平過現場</span></label>
+    <label class="chk"><input type="checkbox" data-k="b5"><span><b>酒神堂 江南</b>（D1 19:30）— Naver／0507-1349-4225</span></label>
+    <label class="chk"><input type="checkbox" data-k="b6"><span><b>무구옥</b>（D2 13:30）— 10:30 現場或 12:00 CatchTable 遠程登記</span></label>
+    <label class="chk"><input type="checkbox" data-k="b7"><span><b>WOWPASS</b> — 先裝 App＋網上預購 voucher（₩5,500，慳 ₩500）</span></label>
+    <label class="chk"><input type="checkbox" data-k="b8"><span><b>機場巴士</b> 6009／6020 — 用 WOWPASS T-money 拍卡</span></label>
+  </div>
+
+  <div class="panel mint">
+    <div class="ck-head"><h3>執行李 CHECKLIST</h3><button class="reset" id="reset">重設</button><span class="count" id="cntP">0 / 12</span></div>
+    <label class="chk"><input type="checkbox" data-k="p1"><span><b>證件</b>護照（6 個月以上有效期）＋副本／存手機</span></label>
+    <label class="chk"><input type="checkbox" data-k="p2"><span><b>文件</b>電子機票、酒店確認截圖</span></label>
+    <label class="chk"><input type="checkbox" data-k="p3"><span><b>錢</b>韓元現金 ₩200,000–300,000</span></label>
+    <label class="chk"><input type="checkbox" data-k="p4"><span><b>卡</b>T-money＋信用卡（開通海外）</span></label>
+    <label class="chk"><input type="checkbox" data-k="p5"><span><b>網絡</b>eSIM（Naver Map＋Kakao T 必備）</span></label>
+    <label class="chk"><input type="checkbox" data-k="p6"><span><b>電</b>220V 圓腳轉插、尿袋、相機</span></label>
+    <label class="chk"><input type="checkbox" data-k="p7"><span><b>保暖</b>大褸／羽絨、發熱內衣 ×2</span></label>
+    <label class="chk"><input type="checkbox" data-k="p8"><span><b>配件</b>手套、頸巾、帽</span></label>
+    <label class="chk"><input type="checkbox" data-k="p9"><span><b>韓服日</b>淺色貼身內搭、平底鞋、披肩</span></label>
+    <label class="chk"><input type="checkbox" data-k="p10"><span><b>隱眼</b>舊鏡盒／度數卡（PWR・BC・DIA）</span></label>
+    <label class="chk"><input type="checkbox" data-k="p11"><span><b>雜項</b>摺傘、常備藥、濕紙巾</span></label>
+    <label class="chk"><input type="checkbox" data-k="p12"><span><b>夜蒲</b>細斜袋（落 club 唔想拎大袋）</span></label>
+  </div>
+
+  <div class="panel">
+    <h3>買 CON 須知</h3>
+    <ul class="tips">
+      <li><b>韓國買彩色隱形眼鏡唔需要處方</b>，但要出示度數：帶舊鏡盒或包裝影相（PWR/SPH、BC、DIA）</li>
+      <li><b>DIA 同 Graphic DIA 唔同</b> — 想自然要睇著色直徑，唔好只睇宣傳圖</li>
+      <li>首選 <b>렌즈미 강남CGV</b>（강남대로 438 2F，10:30–22:30，落機即買）；弘大 <b>peachclover</b> 可試戴 5 色、店員講中文</li>
+      <li>第一次試嘅牌子買少量（日拋先），唔好一次掃 10 盒</li>
+      <li>散光或鏡片易走位 → 唔好只按顏色換，問驗光師</li>
+    </ul>
+  </div>
+</section>
+
+<details class="refs" id="refs">
+  <summary>REFERENCES（34 條）</summary>
+  <ol>
+    <li>[1] 酒神堂江南 地址／11:00–02:00 — diningcode.com/profile.php?rid=gZRWY5ZYyN50</li>
+    <li>[2] 酒神堂新堂本店 퇴계로 411／18:00–01:00 — tchinese.visitseoul.net/area/2024-joosindang</li>
+    <li>[3] 6009 巴士 T1 4A·4B／₩17,000／61 分 — seoulnavi.com/miru/1540</li>
+    <li>[4] 6020 巴士 驛三／₩17,000 — bus-airport.tistory.com/125</li>
+    <li>[5] 酒店位置 驛三 420m／江南 450m — trip.com/hotels/seoul-hotel-detail-126577291</li>
+    <li>[6] 景福宮 11 月 09:00–17:00／週二休／週三免費／著韓服免費 — rosaroundtheworld.com/gyeongbokgung</li>
+    <li>[7] 守門將換崗 10:00・14:00／公開訓練 13:35 — seoulhanbok.com/zh-Hant/blog/royal-guard-ceremony-times</li>
+    <li>[8] 韓服男 社稷路 133-5／4 小時 ₩20,000–30,000 — koreankorea.com/zh/hanbok-rental-gyeongbokgung-palace-2026</li>
+    <li>[9] 北村紅區 10:00–17:00、罰 ₩100,000 — big5chinese.visitkorea.or.kr（vcontsId=93550）</li>
+    <li>[10] 南山纜車 10:00–23:00／來回 ₩15,000 — tchinese.visitseoul.net（TCP035015）</li>
+    <li>[11] N 首爾塔展望台 ₩29,000 — kkday.com/zh-tw/blog/29288</li>
+    <li>[12] 明洞餃子 10:30–21:00／明洞10街 29 — visitkorea（vcontsId=92768）</li>
+    <li>[13] 鐘路3街布帳馬車 時間／人均／現金 — koreavisitguide.com/zh-tw/neighborhoods/jongno-3-ga-nightlife-guide</li>
+    <li>[14] 廣藏市場 10:00–22:00 — creatrip.com/zh-HK/blog/15086</li>
+    <li>[15] 東大門 Doota／Migliore 營業時間 — net-de-happy.net/archives/19676</li>
+    <li>[16] MOFUN 서교점 홍익로2길 7／11:00–20:30 — mofun.co.kr</li>
+    <li>[17] Cartoon Plus 弘大 24 小時／₩3,600 — theseoulog.com/zh/korea-manhwa-cafe…</li>
+    <li>[18] 弘益藥局 양화로18길 7／09:00–23:30／02-337-5414 — @hongikpharmacy_tw（Threads）</li>
+    <li>[19] 렌즈미 강남CGV점 강남대로 438 2F 211호／10:30–22:30 — lens-me.com 가맹점찾기</li>
+    <li>[20] 韓國彩色隱形眼鏡購買：PWR·BC·DIA 檢查重點 — haniseoul.com/zh-TW/travels/korea/korea-circle-lens-shopping-guide-for-foreigners</li>
+    <li>[21] peachclover 피치클로버 홍익로 15／可試戴 5 色 — IG @peachclover.official</li>
+    <li>[22] 무구옥 율곡로1길 7／11:30–21:00（15:00–17:30 休）— Michelin Guide 무구옥</li>
+    <li>[23] 신당한우곱창 다산로 236／16:00–01:00／週日休 — delistationkorea.com</li>
+    <li>[24] 일편등심 강남 테헤란로1길 20 B1／11:00–23:00 — diningcode 일편등심 강남점</li>
+    <li>[25] Uhwa 우화 홍익로5안길 24 2F／참새방앗간 어울마당로 129-1 — IG（@33x1.11 / @__ali.c）</li>
+    <li>[26] WOWPASS 官方 FAQ：發卡費 ₩6,000、提款 ₩1,000／次、兩款餘額、仁川 T1 機只收₩現金 — wowpass.oopy.io/ct</li>
+    <li>[27] 仁川 T1 CU 1 號店機位（2 號出口 A 側）／06:00–23:59 — wowexchange.net/exchange/location/view/351</li>
+    <li>[28] WOWPASS 預購 voucher ₩5,500／機場只可₩現金充值 — korea.chaechae.life/guides/wowpass-foreign-cards-refunds</li>
+    <li>[29] 韓服男景福宮店 Klook 7955：最後入場 17:00／歸還 18:30／店 19:00、1,000+ 件、免費內襯裙髮型、選衫唔計時 — klook.com/zh-HK/activity/7955</li>
+    <li>[30] BL 週邊地圖（Toonique／Animate／MOFUN／Goods moment；LEBOM 已取消）— IG @Dam7d5UT0zh</li>
+    <li>[31] Animate 弘大 양화로 188 AK& 5F／11:00–21:40 — animate-onlineshop.co.kr</li>
+    <li>[32] Toonique 弘大 양화로23길 4-12／11:00–21:00 — IG @toonique_official</li>
+    <li>[33] 굿즈모먼트 성미산로 151-1／11:30–20:00 — goodsmoment.ustraticket.com</li>
+    <li>[35] 天氣 11/10–14 — api.open-meteo.com（2026-11-04 抓取）</li>
+  </ol>
+</details>
+
+<footer>
+  <b>首爾 11.10–14 · 2 人 · 5 日 4 夜 · v3</b><br>
+  食乜即場揀｜所有營業時間以 Naver Map 當日為準｜預報會變，出發前 2 日再睇<br>
+  Made with Hermes · 2026-11-08
+</footer>
+
+</div>
+
+<script>
+const DATA = {
+food: [
+ {n:"일편등심 一片里脊（江南韓牛）",t:"江南",c:"燒肉",a:"강남구 테헤란로1길 20 B1",no:"11:00–23:00（15:00–16:00 休，L.O. 22:00）｜江南站 11 號出口 188m"},
+ {n:"酒神堂 江南店 주신당",t:"江南",c:"酒吧",a:"강남구 강남대로96길 9 B1",no:"11:00–02:00（15:00–17:00 休）｜十二生肖 cocktail＋퓨전한식 下酒菜"},
+ {n:"Koriko Cafe 코리코 카페（吉卜力）",t:"弘大",c:"Cafe",a:"마포구 성미산로 165-7",no:"10:00–19:00｜弘大入口 3 號出口 15 分｜有周邊區"},
+ {n:"Oats Coffee（維也納咖啡）",t:"弘大",c:"Cafe",a:"마포구 성미산로29길 29-8 1F",no:"11:00–21:00"},
+ {n:"Uhwa 우화（1++ 韓牛燒肉）",t:"弘大",c:"燒肉",a:"마포구 홍익로5안길 24 2F",no:"弘大站 5–8 分｜2 人餐 4 部位，店員代烤"},
+ {n:"참새방앗간（海鮮煎餅）",t:"弘大",c:"炸物",a:"마포구 어울마당로 129-1",no:"開到 02:00｜弘大入口 8 號出口 180m"},
+ {n:"60계치킨 60雞（外賣）",t:"弘大",c:"炸雞",a:"Baemin 外賣 App 搜 60계치킨",no:"粟米醬係招牌｜港人熱捧"},
+ {n:"요아정（蜂巢乳酪雪糕・外賣）",t:"弘大",c:"甜品",a:"Baemin 外賣 App 搜 요아정",no:"開到 02:00｜杜拜朱古力味"},
+ {n:"닭궁뎅이 KOKO BUTT（炸雞）",t:"安國",c:"炸雞",a:"종로구 북촌로 31-22 1~3층",no:"11:00–23:00｜安國站 1 號出口 8 分｜鯷魚牛蒡紫菜包飯必點"},
+ {n:"무구옥（北韓式蔘雞湯）",t:"安國",c:"湯飯",a:"종로구 율곡로1길 7 1F",no:"11:30–21:00（15:00–17:30 休）｜10:30 現場／12:00 CatchTable 排"},
+ {n:"益善洞 韓屋 cafe 群",t:"安國",c:"Cafe",a:"鐘路區益善洞一帶",no:"16:00 後最有氣氛｜韓劇場景"},
+ {n:"益善洞 烤肉一條街／布帳馬車",t:"安國",c:"燒肉",a:"鐘路3街站 6 號出口一帶",no:"夜晚限定｜烤肉＋포차 一路食"},
+ {n:"Odarijip 오다리집 간장게장（醬蟹）",t:"明洞",c:"海鮮",a:"중구 명동8나길 10 Savoy Hotel B棟 2F・4F",no:"蟹黃多，配魚卵飯／蛋黃飯"},
+ {n:"明洞餃子 명동교자",t:"明洞",c:"麵食",a:"중구 명동10길 29",no:"10:30–21:00｜米其林必比登，刀削麵＋王餃子"},
+ {n:"明洞街頭小食（辣炒年糕・糖餅・魚板）",t:"明洞",c:"小食",a:"明洞主街一帶",no:"17:00 後最旺｜每樣 ₩3,000–6,000"},
+ {n:"一隻雞（성수，reel 未標店名）",t:"聖水",c:"湯飯",a:"성동구 연무장7길 12 세대빌딩 2F",no:"作者話「人生一隻雞」"},
+ {n:"Maman Gelato 마망젤라또",t:"聖水",c:"甜品",a:"8 Yeonmujang 9-gil",no:"草莓／抹茶＋杜拜朱古力"},
+ {n:"한정선 韓貞仙（水果麻糬）",t:"聖水",c:"甜品",a:"43-1 Yeonmujang-gil",no:"冰過都好食"},
+ {n:"달임막（小熊麵包）",t:"聖水",c:"甜品",a:"38-2 Yeonmujang-gil",no:"店外＋麵包都超好拍"},
+ {n:"메이타왕 MEITAWANG（厚蛋塔）",t:"聖水",c:"甜品",a:"43-1 Yeonmujang-gil",no:"同韓貞仙隔籬，一齊買"},
+ {n:"능동미나리 성수점（水芹菜配肉）",t:"聖水",c:"燒肉",a:"42 Yeonmujang-gil",no:"食完甜嘢食正餐"},
+ {n:"Cafe Onion 聖水",t:"聖水",c:"Cafe",a:"성동구 아차산로9길 8",no:"平日 08:00–22:00／週末 09:00–22:00｜팡도르・앙버터"},
+ {n:"신당한우곱창（韓牛烤腸）",t:"新堂",c:"燒肉",a:"중구 다산로 236",no:"16:00–01:00｜逢週日休｜신당역 6 號出口 119m"},
+ {n:"廣藏市場（綠豆煎餅・飯卷・生牛肉）",t:"新堂",c:"市場",a:"鐘路5街站 8 號出口",no:"10:00–22:00｜配馬格利"},
+ {n:"清進屋 청진옥（解酒湯・1937）",t:"新堂",c:"湯飯",a:"鐘路3街站附近",no:"宵夜／散場後一碗"},
+ {n:"乙支路 노가리골목（乾明太魚＋生啤）",t:"乙支路",c:"酒吧",a:"을지로3가 3／4／11 號出口",no:"18:00 後開枱｜老首爾啤酒巷"},
+ {n:"乙支路 生蠔＋露天酒吧",t:"乙支路",c:"海鮮",a:"乙支路3街一帶（reel 未列店名）",no:"要 DM 作者取店名"},
+ {n:"便利商店（CU／GS25）宵夜",t:"全部",c:"便利店",a:"任何街口",no:"泡麵＋香蕉奶＋三角飯卷；退黑激素／面膜順手補"}
+],
+shop: [
+ {n:"렌즈미 강남CGV점 LensMe（CON）",t:"江南",c:"隱眼",a:"강남구 강남대로 438 스타플렉스 2F 211호",no:"10:30–22:30 每日｜江南站 1 分｜彩色隱眼唔需處方，帶舊鏡盒睇 PWR/BC/DIA"},
+ {n:"peachclover 피치클로버 弘大",t:"弘大",c:"隱眼",a:"마포구 홍익로 15 1F 1호",no:"開到 23:00｜可試戴 5 色｜買 2 送禮、3 盒減 ₩5,000、4 盒減 ₩10,000｜店員講中文"},
+ {n:"弘益藥局 홍익약국",t:"弘大",c:"藥妝",a:"마포구 양화로18길 7 1F",no:"09:00–23:30 全年無休｜醫美級護膚 Rejuran／Rejuall PDRN｜南瓜汁｜即時退稅"},
+ {n:"MUSINSA BEAUTY 弘大",t:"弘大",c:"美妝",a:"弘大（peachclover 對面）",no:"美妝選物，補貨快"},
+ {n:"chaakan 차칸（女團同款鞋）",t:"弘大",c:"鞋",a:"reel 未提供地址｜IG @chaakan_global",no:"平價、好行；分店要現場查"},
+ {n:"RECLOW WE GLOW（眼鏡）",t:"弘大",c:"眼鏡",a:"reel 未提供地址（要留言「墨鏡」）",no:"部分台幣千元有找"},
+ {n:"Olive Young（明洞最大間）",t:"明洞",c:"美妝",a:"明洞站 6 號出口一帶",no:"ilso 粉刺導出液／消腫面膜／退黑激素（買減糖版）"},
+ {n:"ROYAL SKIN 로얄스킨",t:"明洞",c:"美妝",a:"중구 소공로 35",no:"⚠️ 有 reel 投訴呢類明洞推銷店（強迫推銷／退貨爭議）"},
+ {n:"樂天／新世界免稅店",t:"明洞",c:"免稅",a:"明洞站 5 號出口",no:"化妝品、手信；記得帶 passport"},
+ {n:"Moneyplanet 換錢所",t:"明洞",c:"換錢",a:"明洞（reel 未列門牌）",no:"自稱全明洞最抵；弘大、聖水有自助機"},
+ {n:"LAKA FLAGSHIP STORE",t:"聖水",c:"美妝",a:"7 Seongsui-ro 7ga-gil",no:"唇彩全色系＋Color Mixology Bar 調色"},
+ {n:"margesherwood（手袋）",t:"聖水",c:"袋",a:"성동구 연무장11길 13",no:"韓國設計品牌旗艦"},
+ {n:"廣藏市場 棉被／寢具街",t:"新堂",c:"家品",a:"廣藏市場內",no:"秋季棉被季最旺，可以寄艙托運"},
+ {n:"廣藏市場 藥局一條街",t:"新堂",c:"藥妝",a:"廣藏市場旁邊",no:"韓國成藥、藥妝"},
+ {n:"廣藏市場 潮牌一條街",t:"新堂",c:"服飾",a:"廣藏市場一帶",no:"reel 話好逛又好買"},
+ {n:"Doota Mall 東大門",t:"新堂",c:"服飾",a:"중구 장충단로 275",no:"10:30–24:00｜有退稅"},
+ {n:"Migliore 東大門",t:"新堂",c:"服飾",a:"중구 장충단로 263",no:"10:30–翌日 02:00｜週一休"},
+ {n:"COEX 星空圖書館＋新世界江南",t:"江南",c:"百貨",a:"삼성역 5 號出口",no:"免費景點＋最後掃貨，酒店 20 分"},
+ {n:"Animate 홍대점（애니메이트）",t:"弘大",c:"BL週邊",a:"마포구 양화로 188 AK& 5F",no:"11:00–21:40（週末 10:30 開）｜Lezhin／Bomtoon／RIDI／Mr.BLUE 過往快閃貨＋日漫"},
+ {n:"MOFUN AK& 弘大店（모펀）",t:"弘大",c:"BL週邊",a:"마포구 양화로 188 AK& 5F（同 Animate 同層）",no:"11:00–20:30｜AK 店以 BL 聯名為主；서교店滿可試 AK 店／現場排"},
+ {n:"카페 투니크 홍대 1 店（Toonique）",t:"弘大",c:"BL週邊",a:"마포구 양화로23길 4-12",no:"11:00–21:00｜1 店 BL 聯名最多、有過往 BL 週邊；2 店多非 BL IP"},
+ {n:"굿즈모먼트 Goods moment",t:"弘大",c:"BL週邊",a:"마포구 성미산로 151-1（연남동）4F",no:"11:30–20:00｜韓漫＋BL 週邊百貨；每週一休，出發前查"}],
+prod: [
+ {n:"ilso 粉刺導出液",t:"Olive Young",c:"清潔",a:"IG @DdJjPUtzHqh",no:"10 分鐘居家清黑頭，之後上妝貼服；要持續用"},
+ {n:"消腫面膜（只敷下半臉款）",t:"Olive Young",c:"面膜",a:"IG @DdJjPUtzHqh（caption 未寫牌子）",no:"唔使掛耳、唔易掉；去到問店員「붓기 마스크」"},
+ {n:"退黑激素（一定要買減糖版）",t:"Olive Young",c:"健康",a:"IG @DdJjPUtzHqh（caption 未寫牌子）",no:"作者話普通版好甜，買 저당／무설탕"},
+ {n:"Rejuall PDRN Cream",t:"弘益藥局",c:"醫美級",a:"IG @DZbvQN_z7S7",no:"Olive Young 搵唔到，只有弘益藥局有"},
+ {n:"南瓜汁 호박즙",t:"弘益藥局",c:"消腫",a:"IG @DZbvQN_z7S7",no:"韓國藝人上鏡前消腫必飲"},
+ {n:"Care Package 禮盒",t:"弘益藥局",c:"送禮",a:"IG @DZbvQN_z7S7",no:"送禮自用都得；藥局即時退稅"},
+ {n:"點點霜",t:"弘益藥局",c:"藥房",a:"IG @DewdXFGS89L（caption 未寫牌子）",no:"韓國藥局貨；限動有教用法"},
+ {n:"提亮霜",t:"弘益藥局",c:"藥房",a:"IG @DfMlf6lHINk（caption 未寫牌子）",no:"作者話提亮好勁；藥局有 sample 試"},
+ {n:"便利店雪糕／優格",t:"便利店",c:"零食",a:"IG @DZrt6wbvQIQ（caption 未寫牌子）",no:"雪糕偏甜，優格低卡啱減脂"},
+ {n:"彩色隱形眼鏡（CON）",t:"弘益藥局",c:"隱眼",a:"peachclover 弘大（IG @Dey17t4PxGW）",no:"可試戴 5 色；買 2 盒送禮、3 盒減 ₩5,000、4 盒減 ₩10,000"},
+ {n:"棉被／寢具",t:"弘益藥局",c:"家品",a:"廣藏市場（IG @DZZ1szRpTL-）",no:"秋季棉被季；可以寄艙托運"}
+]
+};
+
+const AREAS = {
+ food:["全部","江南","弘大","安國","明洞","聖水","新堂","乙支路"],
+ shop:["全部","江南","弘大","安國","明洞","聖水","新堂"],
+ prod:["全部","Olive Young","弘益藥局","便利店"]
+};
+let state = {tab:"food", area:"全部", q:""};
+const $ = s => document.querySelector(s);
+
+function mapNaver(item){
+  return "https://map.naver.com/p/search/" + encodeURIComponent(item.n + " " + item.a);
+}
+function mapGoogle(item){
+  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(item.n + " " + item.a + " 서울");
+}
+
+function renderAreas(){
+  const box = $("#areas");
+  box.innerHTML = (AREAS[state.tab]||AREAS.food).map(a =>
+    `<button class="fbtn ${state.area===a?"on":""}" data-area="${a}">${a}</button>`
+  ).join("");
+}
+
+function renderCards(){
+  const list = DATA[state.tab].filter(it => {
+    if(state.area !== "全部" && it.t !== state.area) return false;
+    if(state.q){
+      const q = state.q.toLowerCase();
+      return (it.n + it.a + it.no + it.c).toLowerCase().includes(q);
+    }
+    return true;
+  });
+  const box = $("#cards");
+  if(!list.length){ box.innerHTML = `<div class="empty">呢區冇符合嘅店 — 試下「全部」或者清空搜尋。</div>`; return; }
+  box.innerHTML = list.map((it,i) => `
+    <div class="card" data-i="${i}">
+      <div class="cat ${state.tab!=="food"?"b":""}">${it.c}</div>
+      <div class="nm">${it.n}</div>
+      ${it.a ? `<div class="ad">📍 ${it.a}</div>` : ""}
+      ${it.no ? `<div class="no">${it.no}</div>` : ""}
+      <div class="links">
+        <a href="${mapNaver(it)}" target="_blank" rel="noopener">Naver Map</a>
+        <a class="g" href="${mapGoogle(it)}" target="_blank" rel="noopener">Google</a>
+      </div>
+    </div>`).join("");
+}
+
+function setTab(t){
+  state.tab = t; state.area = "全部"; renderAreas();
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
+  renderCards();
+}
+
+document.querySelectorAll(".tab").forEach(b => b.onclick = () => setTab(b.dataset.tab));
+$("#areas").addEventListener("click", e => {
+  const b = e.target.closest(".fbtn"); if(!b) return;
+  state.area = b.dataset.area; renderAreas(); renderCards();
+});
+$("#q").addEventListener("input", e => { state.q = e.target.value.trim(); renderCards(); });
+$("#dice").addEventListener("click", () => {
+  const cards = [...document.querySelectorAll(".card")];
+  if(!cards.length) return;
+  let n = 0;
+  const spin = setInterval(() => {
+    cards.forEach(c => c.classList.remove("picked"));
+    cards[Math.floor(Math.random()*cards.length)].classList.add("picked");
+    if(++n > 8){
+      clearInterval(spin);
+      const pick = cards[Math.floor(Math.random()*cards.length)];
+      cards.forEach(c => c.classList.remove("picked"));
+      pick.classList.add("picked");
+      pick.scrollIntoView({block:"center", behavior:"smooth"});
+    }
+  }, 90);
+});
+document.querySelectorAll(".pick").forEach(btn => btn.onclick = () => {
+  state.tab = "food"; state.area = btn.dataset.area; state.q = "";
+  $("#q").value = "";
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("on", b.dataset.tab === "food"));
+  renderAreas(); renderCards();
+  document.getElementById("pocket").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+document.getElementById("tabFood").textContent = "🍽 食乜好（" + DATA.food.length + "）";
+document.getElementById("tabShop").textContent = "🛍 買乜好（" + DATA.shop.length + "）";
+document.getElementById("tabProd").textContent = "🧴 產品（" + DATA.prod.length + "）";
+renderAreas(); renderCards();
+
+/* checklist */
+(function(){
+  const KEY = "seoul-2026-11-prep-v3";
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){}
+  const boxes = [...document.querySelectorAll(".chk input")];
+  function refresh(){
+    const b = boxes.filter(x => x.dataset.k[0] === "b");
+    const p = boxes.filter(x => x.dataset.k[0] === "p");
+    $("#cntB").textContent = b.filter(x=>x.checked).length + " / " + b.length;
+    $("#cntP").textContent = p.filter(x=>x.checked).length + " / " + p.length;
+  }
+  boxes.forEach(box => {
+    if(saved[box.dataset.k]) box.checked = true;
+    box.addEventListener("change", () => {
+      saved[box.dataset.k] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+      refresh();
+    });
+  });
+  const r = $("#reset");
+  if(r) r.addEventListener("click", () => {
+    saved = {}; try { localStorage.removeItem(KEY); } catch(e){}
+    boxes.forEach(b => b.checked = false); refresh();
+  });
+  refresh();
+})();
+
+/* scroll spy */
+(function(){
+  const links = [...document.querySelectorAll(".nav a")];
+  const map = {};
+  links.forEach(a => map[a.getAttribute("href").slice(1)] = a);
+  const targets = Object.keys(map).map(id => document.getElementById(id)).filter(Boolean);
+  if(!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => {
+    es.forEach(en => {
+      if(en.isIntersecting){
+        links.forEach(l => l.classList.remove("on"));
+        const a = map[en.target.id]; if(a) a.classList.add("on");
+      }
+    });
+  }, {rootMargin:"-100px 0px -72% 0px", threshold:0});
+  targets.forEach(t => io.observe(t));
+})();
+</script>
+</body>
+</html>
