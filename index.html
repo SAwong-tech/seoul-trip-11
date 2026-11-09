@@ -153,6 +153,19 @@ ul.tips li{font-size:13px;color:#cfd6e0;padding:5px 0 5px 16px;position:relative
 ul.tips li::before{content:"▸";position:absolute;left:0;top:5px;color:var(--mint);font-size:10px}
 ul.tips li b{color:#fff}
 
+
+.mgrid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.mgrid{grid-template-columns:1fr 1fr}}
+.mcard{margin:0;background:var(--card2);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.mcard img{width:100%;height:auto;display:block;background:#0b0d11}
+.mcard figcaption{padding:10px 12px 12px;font-size:12.5px;color:#cfd6e0}
+.mcard figcaption b{display:block;font-size:14px;color:#fff;margin-bottom:2px}
+.mcard .mp{display:inline-block;font-size:11px;font-weight:800;color:var(--gold);background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.35);padding:2px 7px;border-radius:6px;margin:3px 0 6px}
+.mcard ul{list-style:none;padding:0}
+.mcard li{font-size:12px;line-height:1.5;padding:3px 0 3px 12px;position:relative;color:#cfd6e0}
+.mcard li::before{content:"·";position:absolute;left:2px;color:var(--mint)}
+.martnote{font-size:11.5px;color:var(--dim2);margin-top:10px}
+
 details.refs{margin:22px 0 0;background:var(--card2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
 details.refs summary{font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--dim);cursor:pointer;list-style:none}
 details.refs summary::-webkit-details-marker{display:none}
@@ -179,7 +192,7 @@ footer b{color:var(--dim2)}
   <div class="topbar-in">
     <nav class="nav" id="nav">
       <a href="#d1">D1</a><a href="#d2">D2</a><a href="#d3">D3</a><a href="#d4">D4</a><a href="#d5">D5</a>
-      <a href="#pocket" class="hot">🍽 食乜</a><a href="#prep">準備</a><a href="#refs">來源</a>
+      <a href="#pocket" class="hot">🍽 食乜</a><a href="#mart">🛒 超市</a><a href="#prep">準備</a><a href="#refs">來源</a>
     </nav>
     <button class="printbtn" onclick="window.print()">存 PDF</button>
   </div>
@@ -263,6 +276,7 @@ footer b{color:var(--dim2)}
     <li><time>14:30</time><div class="body"><b>Cartoon Plus 弘大 만화카페</b><span>양화로16길 29 B1｜24 小時｜₩3,600/hr</span></div></li>
     <li><time>16:30</time><div class="body"><b>掃貨：弘益藥局 → peachclover → MUSINSA</b><span>8 號出口 1 分（藥局開到 23:30）；隱眼 peachclover 9 號出口 5 分</span></div></li>
     <li><time>17:45</time><div class="body"><b>굿즈모먼트 Goods moment（연남동）</b><span>성미산로 151-1 4F｜11:30–20:00｜韓漫＋BL 週邊百貨；弘大行 15 分</span></div></li>
+    <li><time>18:30</time><div class="body"><b>Lost Technology Pictures（合井寶可夢卡拍貼）</b><span>독막로8길 38 1층｜24 小時｜可以自訂卡名／屬性，抽卡框；<span class="warn">排隊約 1 小時</span>，去之前查 IG @lost_tech.png 等候時間</span></div></li>
     <li><time>19:30</time><div class="body"><b>晚餐：自己揀</b><span>烤肉／炸雞／煎餅 — 飲完先落 club</span><button class="pick" data-area="hongdae">弘大食乜 →</button></div></li>
     <li><time>22:00</time><div class="body"><b>弘大／合井 酒吧＋노래방</b><span>星期四未算最旺，飲到 01:00 再決定</span></div></li>
   </ol>
@@ -312,6 +326,58 @@ footer b{color:var(--dim2)}
 </section>
 
 <!-- PREP -->
+
+<section id="mart" style="margin-top:26px">
+  <div class="sect-head"><div><h3>🛒 樂天超市 · 補貨清單</h3><p>你 send 嘅 Threads 帖，11 張圖逐張列出嚟（價錢係台灣代購 post 嘅 NT$，韓國現場睇 ₩）</p></div></div>
+  <div class="mgrid">
+    <figure class="mcard">
+      <img src="mart/m1.jpg" alt="泡麵・貝類海帶" loading="lazy">
+      <figcaption><b>泡麵・貝類海帶</b><span class="mp">NT$269 / 299 / 269</span><ul><li>農心 양반 바지락 미역국라면（蛤蜊海帶湯麵）4入</li><li>不倒翁 진한 굴라면（濃牡蠣海鮮拉麵）4入</li><li>農心 국수（爽口湯麵）4入</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m2.jpg" alt="泡麵・經典辣味" loading="lazy">
+      <figcaption><b>泡麵・經典辣味</b><span class="mp">NT$279 / 219 / 189</span><ul><li>不倒翁 진짬뽕（金螃蟹海鮮）4入</li><li>農心 너구리（小浣熊）5入</li><li>農心 신라면（辛拉麵）5入</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m3.jpg" alt="泡麵・辣雞系列" loading="lazy">
+      <figcaption><b>泡麵・辣雞系列</b><span class="mp">NT$199 / 279</span><ul><li>不倒翁 金拉麵 辣味／原味 5入</li><li>三養 불닭 辣雞（起司／奶油白醬／原味）5入</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m4.jpg" alt="泡麵・白醬／意粉" loading="lazy">
+      <figcaption><b>泡麵・白醬／意粉</b><span class="mp">NT$249 / 319</span><ul><li>農心 辣白醬辛拉麵（Shin Toomba）4入</li><li>三養 Q彈義大利麵 4入（番茄／橄欖油香蒜／奶油蘑菇）</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m5.jpg" alt="抹茶零食" loading="lazy">
+      <figcaption><b>抹茶零食</b><span class="mp">NT$219 / 199 / 229</span><ul><li>樂天 Binch 抹茶朱古力餅 204g</li><li>Crown 抹茶朱古力豆餅乾 256g</li><li>Crown 抹茶威化夾心 284g</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m6.jpg" alt="餅乾・朱古力派" loading="lazy">
+      <figcaption><b>餅乾・朱古力派</b><span class="mp">NT$179 / 219</span><ul><li>Orion 好麗友 夾心餅 5入（草莓／朱古力）</li><li>樂天 Ghana 千層朱古力批 12入</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m7.jpg" alt="脆餅・威化" loading="lazy">
+      <figcaption><b>脆餅・威化</b><span class="mp">NT$129 / 179 / 219</span><ul><li>農心 甜鍋巴脆餅（누룽지팝）142g</li><li>Crown 奶油鬆餅 316g</li><li>Binch 朱古力餅 204g</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m8.jpg" alt="Market O 布朗尼" loading="lazy">
+      <figcaption><b>Market O 布朗尼</b><span class="mp">NT$219</span><ul><li>12入：原味／朱古力／奶油起司／抹茶／雙倍起司</li><li>冰食、配雪糕、配咖啡、微波加熱都得</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m9.jpg" alt="奶油扁可頌" loading="lazy">
+      <figcaption><b>奶油扁可頌</b><span class="mp">NT$299</span><ul><li>GOOD TODAY 달콤바삭 버터크룽지 6 個 120g</li><li>似韓式鍋巴咁脆嘅牛角包</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m10.jpg" alt="高湯錠（必買手信）" loading="lazy">
+      <figcaption><b>高湯錠（必買手信）</b><span class="mp">NT$199</span><ul><li>CJ 白雪 육수에 1분링 20 入</li><li>鰹魚／蛤蜊鰹魚／雪濃湯／蔬菜 4 味</li></ul></figcaption>
+    </figure>
+    <figure class="mcard">
+      <img src="mart/m11.jpg" alt="海苔" loading="lazy">
+      <figcaption><b>海苔</b><span class="mp">NT$549 / 159</span><ul><li>BEURRE 海苔 16 入（奶油／松露）</li><li>양반 김부각 海苔脆餅 6 味（鮮蝦／原味／香蒜／泡菜／芥末／燒烤）</li></ul></figcaption>
+    </figure>
+  </div>
+  <p class="martnote">買法：樂天超市（首爾站店，서울역 1 號出口直達）／emart／Homeplus 都買到；泡麵同海苔最抵，易壓碎嘅（布朗尼、可頌）手提上機。</p>
+</section>
+
 <section id="prep" style="margin-top:26px">
   <div class="panel">
     <div class="ck-head"><h3>要訂／要買</h3><span class="count" id="cntB">0 / 7</span></div>
@@ -354,7 +420,7 @@ footer b{color:var(--dim2)}
 </section>
 
 <details class="refs" id="refs">
-  <summary>REFERENCES（34 條）</summary>
+  <summary>REFERENCES（38 條）</summary>
   <ol>
     <li>[1] 酒神堂江南 地址／11:00–02:00 — diningcode.com/profile.php?rid=gZRWY5ZYyN50</li>
     <li>[2] 酒神堂新堂本店 퇴계로 411／18:00–01:00 — tchinese.visitseoul.net/area/2024-joosindang</li>
@@ -389,7 +455,10 @@ footer b{color:var(--dim2)}
     <li>[31] Animate 弘大 양화로 188 AK& 5F／11:00–21:40 — animate-onlineshop.co.kr</li>
     <li>[32] Toonique 弘大 양화로23길 4-12／11:00–21:00 — IG @toonique_official</li>
     <li>[33] 굿즈모먼트 성미산로 151-1／11:30–20:00 — goodsmoment.ustraticket.com</li>
-    <li>[35] 天氣 11/10–14 — api.open-meteo.com（2026-11-04 抓取）</li>
+    <li>[35] Odarijip 烏達里家 3 分店地址／套餐 ₩30,000–50,000 — IG @DcvTtpAidmU</li>
+    <li>[36] Lost Technology Pictures 독막로8길 38／24h／排隊約 1 小時 — mio.travel、xinmedia.com</li>
+    <li>[37] 樂天超市補貨清單 11 張圖（泡麵／零食／海苔／布朗尼／高湯錠）— threads.com/@as091118887654 DfW7lMCAcje</li>
+    <li>[38] 天氣 11/10–14 — api.open-meteo.com（2026-11-04 抓取）</li>
   </ol>
 </details>
 
@@ -416,7 +485,10 @@ food: [
  {n:"무구옥（北韓式蔘雞湯）",t:"安國",c:"湯飯",a:"종로구 율곡로1길 7 1F",no:"11:30–21:00（15:00–17:30 休）｜10:30 現場／12:00 CatchTable 排"},
  {n:"益善洞 韓屋 cafe 群",t:"安國",c:"Cafe",a:"鐘路區益善洞一帶",no:"16:00 後最有氣氛｜韓劇場景"},
  {n:"益善洞 烤肉一條街／布帳馬車",t:"安國",c:"燒肉",a:"鐘路3街站 6 號出口一帶",no:"夜晚限定｜烤肉＋포차 一路食"},
- {n:"Odarijip 오다리집 간장게장（醬蟹）",t:"明洞",c:"海鮮",a:"중구 명동8나길 10 Savoy Hotel B棟 2F・4F",no:"蟹黃多，配魚卵飯／蛋黃飯"},
+ {n:"Odarijip 오다리집 간장게장（醬蟹）明洞店",t:"明洞",c:"海鮮",a:"중구 명동8나길 10 Savoy Hotel B棟 2F・4F",no:"蟹黃多，配魚卵飯／蛋黃飯"},
+ {n:"Odarijip 烏達里家 江南店（醬蟹）",t:"江南",c:"海鮮",a:"강남구 봉은사로 30길 74 1층",no:"套餐 ₩30,000–50,000／人（附蒸蛋、泡菜湯、魚卵拌飯）；近你酒店"},
+ {n:"Odarijip 烏達里家 弘大店（醬蟹）",t:"弘大",c:"海鮮",a:"마포구 서교동 366-1 2・3층",no:"同款套餐；弘大行完可以食"},
+ {n:"首爾烤豬肉第一名（@st66_kr 介紹）",t:"弘大",c:"燒肉",a:"reel 未列店名（要 DM 作者）",no:"大醬湯濃、辣拌麵多海苔、烤豬皮必點"},
  {n:"明洞餃子 명동교자",t:"明洞",c:"麵食",a:"중구 명동10길 29",no:"10:30–21:00｜米其林必比登，刀削麵＋王餃子"},
  {n:"明洞街頭小食（辣炒年糕・糖餅・魚板）",t:"明洞",c:"小食",a:"明洞主街一帶",no:"17:00 後最旺｜每樣 ₩3,000–6,000"},
  {n:"一隻雞（성수，reel 未標店名）",t:"聖水",c:"湯飯",a:"성동구 연무장7길 12 세대빌딩 2F",no:"作者話「人生一隻雞」"},
@@ -455,7 +527,9 @@ shop: [
  {n:"Animate 홍대점（애니메이트）",t:"弘大",c:"BL週邊",a:"마포구 양화로 188 AK& 5F",no:"11:00–21:40（週末 10:30 開）｜Lezhin／Bomtoon／RIDI／Mr.BLUE 過往快閃貨＋日漫"},
  {n:"MOFUN AK& 弘大店（모펀）",t:"弘大",c:"BL週邊",a:"마포구 양화로 188 AK& 5F（同 Animate 同層）",no:"11:00–20:30｜AK 店以 BL 聯名為主；서교店滿可試 AK 店／現場排"},
  {n:"카페 투니크 홍대 1 店（Toonique）",t:"弘大",c:"BL週邊",a:"마포구 양화로23길 4-12",no:"11:00–21:00｜1 店 BL 聯名最多、有過往 BL 週邊；2 店多非 BL IP"},
- {n:"굿즈모먼트 Goods moment",t:"弘大",c:"BL週邊",a:"마포구 성미산로 151-1（연남동）4F",no:"11:30–20:00｜韓漫＋BL 週邊百貨；每週一休，出發前查"}],
+ {n:"굿즈모먼트 Goods moment",t:"弘大",c:"BL週邊",a:"마포구 성미산로 151-1（연남동）4F",no:"11:30–20:00｜韓漫＋BL 週邊百貨；每週一休，出發前查"},
+ {n:"樂天超市 롯데마트（首爾站店）",t:"明洞",c:"超市",a:"중구 한강대로 405（서울역 1 號出口直達）",no:"泡麵／海苔／布朗尼／高湯錠一次掃；見下面「超市補貨清單」11 張圖"},
+ {n:"Lost Technology Pictures（寶可夢卡拍貼）",t:"弘大",c:"影相",a:"마포구 독막로8길 38 1층（합정동 360-23）",no:"24 小時｜自製寶可夢卡＋盲抽卡框；排隊約 1 小時，IG @lost_tech.png 有即時等候時間"}],
 prod: [
  {n:"ilso 粉刺導出液",t:"Olive Young",c:"清潔",a:"IG @DdJjPUtzHqh",no:"10 分鐘居家清黑頭，之後上妝貼服；要持續用"},
  {n:"消腫面膜（只敷下半臉款）",t:"Olive Young",c:"面膜",a:"IG @DdJjPUtzHqh（caption 未寫牌子）",no:"唔使掛耳、唔易掉；去到問店員「붓기 마스크」"},
