@@ -154,6 +154,12 @@ ul.tips li::before{content:"▸";position:absolute;left:0;top:5px;color:var(--mi
 ul.tips li b{color:#fff}
 
 
+
+.gloss{margin:10px 0 12px;border:1px solid var(--line);border-radius:12px;background:var(--card2)}
+.gloss summary{cursor:pointer;font-size:12.5px;font-weight:800;padding:10px 12px;color:var(--gold)}
+.g-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:2px 12px 12px;font-size:12px;color:#cfd6e0}
+.g-grid b{color:var(--mint);font-weight:800;margin-right:4px}
+@media(max-width:380px){.g-grid{grid-template-columns:1fr}}
 .mgrid{display:grid;grid-template-columns:1fr;gap:12px}
 @media(min-width:640px){.mgrid{grid-template-columns:1fr 1fr}}
 .mcard{margin:0;background:var(--card2);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
@@ -322,9 +328,22 @@ footer b{color:var(--dim2)}
     <button class="tab" data-tab="shop" id="tabShop">🛍 買乜好</button>
     <button class="tab" data-tab="prod" id="tabProd">🧴 產品</button>
   </div>
+  <details class="gloss">
+    <summary>🇰🇷 睇唔明嘅韓文菜單 — 12 個最常見</summary>
+    <div class="g-grid">
+      <span><b>곱창</b> 烤牛／豬腸</span><span><b>대창</b> 烤大腸（油香）</span>
+      <span><b>막창</b> 烤牛皺胃</span><span><b>해장국</b> 解酒湯</span>
+      <span><b>간장게장</b> 醬油生醃蟹</span><span><b>양념게장</b> 辣醬醃蟹</span>
+      <span><b>노가리</b> 烤明太魚乾</span><span><b>계란말이</b> 韓式玉子燒</span>
+      <span><b>오뎅탕</b> 魚板湯</span><span><b>빙수</b> 韓式刨冰</span>
+      <span><b>아인슈페너</b> 維也納咖啡（鮮奶油）</span><span><b>크렘브륄레</b> 焦糖脆面</span>
+      <span><b>분식</b> 小食店（年糕／紫菜包飯）</span><span><b>포장</b> 外賣</span>
+      <span><b>웨이팅</b> 排隊／取號</span><span><b>현금</b> 現金（只收）</span>
+    </div>
+  </details>
   <div class="filters" id="areas"></div>
   <div class="searchrow">
-    <input id="q" placeholder="搜尋店名 / 食物（例：醬蟹、곱창、cafe）">
+    <input id="q" placeholder="搜尋店名 / 食物（例：醬蟹、烤腸、咖啡）">
     <button class="dice" id="dice">🎲 抽</button>
   </div>
   <div class="cards" id="cards"></div>
